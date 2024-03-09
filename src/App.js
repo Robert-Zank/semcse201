@@ -81,7 +81,7 @@ function App() {
                 </div>
               ))}
             </div>
-            <button onClick={searchRecipes}>Search Recipes</button> {/* Moved the button below the text box */}
+            <button onClick={searchRecipes}>Search Recipes</button>
           </div>
         )}
         {/* Additional tabs content if needed */}

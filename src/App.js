@@ -8,6 +8,7 @@ function App() {
     return savedIngredients ? JSON.parse(savedIngredients) : [];
   });
   const [ingredientName, setIngredientName] = useState('');
+  const [matchingRecipes, setMatchingRecipes] = useState([]);
 
   useEffect(() => {
     localStorage.setItem('ingredients', JSON.stringify(ingredients));
@@ -15,7 +16,7 @@ function App() {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-  };
+  }; 
 
   const addIngredient = () => {
     if (!ingredientName.trim()) return; // Prevent adding empty strings
@@ -44,17 +45,15 @@ function App() {
       },
     ];
 
-    const matchingRecipes = recipes.filter(recipe =>
+    const matchedRecipes = recipes.filter(recipe =>
       recipe.ingredients.every(ingredient => ingredients.includes(ingredient))
     );
 
-    openRecipeModal(matchingRecipes);
+    setMatchingRecipes(matchedRecipes);
   };
 
-  const openRecipeModal = (matchingRecipes) => {
-    // Implement logic to display a modal or pop-up with matching recipes
-    // You can use a library like React Modal or create your own modal component
-    console.log(matchingRecipes);
+  const closeModal = () => {
+    setMatchingRecipes([]);
   };
 
   return (
@@ -87,6 +86,19 @@ function App() {
         )}
         {/* Additional tabs content if needed */}
       </div>
+      {matchingRecipes.length > 0 && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>×</span>
+            <h2>Matching Recipes</h2>
+            <ul>
+              {matchingRecipes.map(recipe => (
+                <li key={recipe.id}>{recipe.name}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

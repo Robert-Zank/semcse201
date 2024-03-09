@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  // Initialize the ingredients state with data from local storage if available
+  const [activeTab, setActiveTab] = useState('tab1');
   const [ingredients, setIngredients] = useState(() => {
     const savedIngredients = localStorage.getItem('ingredients');
     return savedIngredients ? JSON.parse(savedIngredients) : [];
   });
   const [ingredientName, setIngredientName] = useState('');
-  const [activeTab, setActiveTab] = useState('tab1');
 
-  // Save ingredients to local storage whenever the ingredients state changes
   useEffect(() => {
     localStorage.setItem('ingredients', JSON.stringify(ingredients));
   }, [ingredients]);
@@ -23,6 +21,12 @@ function App() {
     if (!ingredientName.trim()) return; // Prevent adding empty strings
     setIngredients(prevIngredients => [...prevIngredients, ingredientName]);
     setIngredientName(''); // Reset input field
+  };
+
+  const deleteIngredient = (index) => {
+    const newIngredients = [...ingredients];
+    newIngredients.splice(index, 1);
+    setIngredients(newIngredients);
   };
 
   return (
@@ -44,7 +48,10 @@ function App() {
             <button onClick={addIngredient}>Add Ingredient</button>
             <div className="ingredient-cards">
               {ingredients.map((ingredient, index) => (
-                <div key={index} className="card">{ingredient}</div>
+                <div key={index} className="card">
+                  <span>{ingredient}</span>
+                  <button onClick={() => deleteIngredient(index)} className="delete-button">Delete</button>
+                </div>
               ))}
             </div>
           </div>

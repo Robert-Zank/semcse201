@@ -29,6 +29,34 @@ function App() {
     setIngredients(newIngredients);
   };
 
+  const searchRecipes = () => {
+    const recipes = [
+      {
+        id: 1,
+        name: "Spaghetti Carbonara",
+        ingredients: ["pasta", "eggs", "bacon", "Parmesan cheese", "black pepper"],
+      },
+      // Add more recipes as needed
+      {
+        id: 2,
+        name: "Test Dish",
+        ingredients: ["tomato", "potato", "ketchup"],
+      },
+    ];
+
+    const matchingRecipes = recipes.filter(recipe =>
+      recipe.ingredients.every(ingredient => ingredients.includes(ingredient))
+    );
+
+    openRecipeModal(matchingRecipes);
+  };
+
+  const openRecipeModal = (matchingRecipes) => {
+    // Implement logic to display a modal or pop-up with matching recipes
+    // You can use a library like React Modal or create your own modal component
+    console.log(matchingRecipes);
+  };
+
   return (
     <div className="App">
       <div className="Tabs">
@@ -54,6 +82,7 @@ function App() {
                 </div>
               ))}
             </div>
+            <button onClick={searchRecipes}>Search Recipes</button> {/* Moved the button below the text box */}
           </div>
         )}
         {/* Additional tabs content if needed */}

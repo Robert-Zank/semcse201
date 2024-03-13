@@ -32,8 +32,9 @@
   margin-top: 20px;
 }
 
-/* Input field */
-input[type="text"] {
+/* Input fields */
+input[type="text"],
+input[type="number"] {
   padding: 10px;
   margin: 0 5px; /* Added margin */
   border: 1px solid #ccc;
@@ -41,7 +42,7 @@ input[type="text"] {
   font-size: 16px;
 }
 
-/* Add Ingredient button */
+/* Add Ingredient button and Add Timer button */
 button {
   padding: 10px 20px;
   margin-top: 5px; /* Added margin */
@@ -57,26 +58,28 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Styles for ingredient cards */
-.ingredient-cards {
+/* Styles for ingredient cards and timer cards */
+.ingredient-cards,
+.timer-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
 }
 
-.card {
+.card,
+.timer {
   display: flex; /* Change to flex display */
   justify-content: space-between; /* Align items evenly, pushing the delete button to the right */
   align-items: center;
-  width: 250px; /* You can adjust the width as needed */
-  padding: 7px;
+  width: 300px; /* Adjusted width */
+  padding: 10px;
   margin-bottom: 10px; /* Added margin */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #ffffff; /* Card background color */
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .delete-button {

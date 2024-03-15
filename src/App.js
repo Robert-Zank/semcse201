@@ -27,20 +27,32 @@ const RecipeModal = ({ recipes, closeModal }) => (
 // Timer Component
 const Timer = ({ index, name, duration, onDelete }) => {
   const [timeLeft, setTimeLeft] = useState(duration * 60); // Convert minutes to seconds
+  const [isPaused, setIsPaused] = useState(false);
+  const [intervalId, setIntervalId] = useState(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prevTimeLeft => {
-        if (prevTimeLeft === 1) {
-          clearInterval(timer);
-          onDelete(index);
-        }
-        return prevTimeLeft - 1;
-      });
-    }, 1000); // Update time left every second
+    if (!isPaused) {
+      const timer = setInterval(() => {
+        setTimeLeft(prevTimeLeft => {
+          if (prevTimeLeft === 1) {
+            clearInterval(timer);
+            onDelete(index);
+            alert(`Timer "${name}" has finished!`);
+          }
+          return prevTimeLeft - 1;
+        });
+      }, 1000); // Update time left every second
+      setIntervalId(timer);
+    } else {
+      clearInterval(intervalId);
+    }
 
-    return () => clearInterval(timer); // Clean up timer on component unmount
-  }, [index, onDelete]);
+    return () => clearInterval(intervalId); // Clean up timer on component unmount
+  }, [index, name, onDelete, isPaused, intervalId]);
+
+  const togglePause = () => {
+    setIsPaused(prevPaused => !prevPaused);
+  };
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
@@ -50,9 +62,14 @@ const Timer = ({ index, name, duration, onDelete }) => {
       <span>{name}</span>
       <span>{`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</span>
       <button className="delete-button" onClick={() => onDelete(index)}>Delete</button>
+      {timeLeft > 0 && (
+        <button onClick={togglePause}>{isPaused ? 'Play' : 'Pause'}</button>
+      )}
     </div>
   );
 };
+
+
 
 
 const App = () => {

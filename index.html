@@ -4,11 +4,20 @@
     <title>Document</title>
   </head>
   <body>
+    <!--This is responsible for loading the stored ingredients imediately on startup-->
+    <!--This creates the function that will hold the functions from the.js file that we wnat to run on startup-->
+    <script type="text/javascript">
+      function onLoadFunctions() {
+        loadIngredients();   
+      }
+      window.onload = onLoadFunctions;
+    </script>
     <h1>Enter ingredients!</h1>
     <input id = "tempString">
-    <button onclick = "input()" id = "ingredientsEnter">Enter</button> <!--button for the uder to click to enter each ingredient-->
+    <button onclick = "input();saveIngredients()" id = "ingredientsEnter">Enter</button> <!--button for the uder to click to enter each ingredient-->
     <h2 id = "display" ></h2> <!--used to display the ingredients-->
     <button onclick = "displayRecipes()" id = "recipeButton">Click to Display Matching Recipes!</button>
+    <button onclick = "clearIngredients()" id = "clearButton">Clear Ingredients</button> <!--button to clear all ingredients entered at the moment-->
     <script src="main.js"></script>
   </body>
 </html>

@@ -38,3 +38,36 @@ function input(){
 function displayRecipes(){
   document.getElementById("display").innerHTML = "";
 }
+
+function loadIngredients() {
+  /* This grabs the string that we converted in the saveIngredients() function
+  that is stored with the key "ingredients"*/
+  const storedIngredients = localStorage.getItem("ingredients");
+  /*Chcecks if the user has anything stored in their RAM with the key*/
+  if (storedIngredients) {
+    /*Converts the string back into an array that we can use*/
+    ingredients = JSON.parse(storedIngredients);
+  }
+
+  // This is a null value to hold the ingredient
+  var display = "";
+  // loops thru the ingredients and displayes them in the same format as the input funciton.
+  for (var i = 0; i < ingredients.length; i++) {
+    display += "- " + ingredients[i] + "<br>";
+  }
+  document.getElementById("display").innerHTML = display;
+}
+
+/*Called when a new ingredient is added. Each time it is called, the memory location is overwritten.*/
+function saveIngredients() {
+  /* This stores the item in the users RAM. It takes two string values. 
+  The first one is the key and the second is the value. JSON.stringify converts
+  the array into a string so it can be stored.*/
+  localStorage.setItem("ingredients", JSON.stringify(ingredients));
+}
+
+// This function clears the ram from the ingredients 
+function clearIngredients() {
+  localStorage.removeItem("ingredients");
+  window.location.reload();
+}

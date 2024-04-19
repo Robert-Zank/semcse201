@@ -1,6 +1,9 @@
 var ingredients = []; // array for the ingredients entered by the user
 var numberOfIngredients = 0; // keeps track of the number of ingredients
 
+// This loads the Ingredients when the program is booted up
+window.onload = loadIngredients;
+
 class Recipe{ // class for the different recipes
   constructor(name, ingredients, instructions) {
     this.name = name; // name of recipe
@@ -21,12 +24,7 @@ class Recipe{ // class for the different recipes
   }
 }
 
-// handles the input of the ingredients
-function input(){
-  var str = document.getElementById("tempString").value; // grabs the value entered by the user
-  ingredients.push(str); // puts the input in the ingredients array
-  numberOfIngredients += 1; // increases ingredients count
-  
+function displayIngredients() {
   var display = ""; // creates an empty string
   for (var i = 0; i < ingredients.length; i += 1) { // for all of the ingredients in the ingredient array
     display += "- " + ingredients[i] + "<br>"; // add a bullet point, the ingredient, and a newline
@@ -35,7 +33,17 @@ function input(){
   document.getElementById("display").innerHTML = display; // display the string on the webpage
 }
 
+// handles the input of the ingredients
+function input(){
+  var str = document.getElementById("tempString").value; // grabs the value entered by the user
+  ingredients.push(str); // puts the input in the ingredients array
+  numberOfIngredients += 1; // increases ingredients count
+  
+  displayIngredients();
+}
+
 function displayRecipes(){
+  // more code...
   document.getElementById("display").innerHTML = "";
 }
 
@@ -49,13 +57,7 @@ function loadIngredients() {
     ingredients = JSON.parse(storedIngredients);
   }
 
-  // This is a null value to hold the ingredient
-  var display = "";
-  // loops thru the ingredients and displayes them in the same format as the input funciton.
-  for (var i = 0; i < ingredients.length; i++) {
-    display += "- " + ingredients[i] + "<br>";
-  }
-  document.getElementById("display").innerHTML = display;
+  displayIngredients();
 }
 
 /*Called when a new ingredient is added. Each time it is called, the memory location is overwritten.*/

@@ -4,14 +4,6 @@
     <title>Document</title>
   </head>
   <body>
-    <!--This is responsible for loading the stored ingredients imediately on startup-->
-    <!--This creates the function that will hold the functions from the.js file that we wnat to run on startup-->
-    <script type="text/javascript">
-      function onLoadFunctions() {
-        loadIngredients();   
-      }
-      window.onload = onLoadFunctions;
-    </script>
     <h1>Enter ingredients!</h1>
     <input id = "tempString">
     <button onclick = "input();saveIngredients()" id = "ingredientsEnter">Enter</button> <!--button for the uder to click to enter each ingredient-->

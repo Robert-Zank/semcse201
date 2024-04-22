@@ -30,6 +30,10 @@ function displayIngredients() {
     display += "- " + ingredients[i] + "<br>"; // add a bullet point, the ingredient, and a newline
   }
 
+  if (display == "") {
+    display = "No Ingredients in Pantry";
+  }
+
   document.getElementById("display").innerHTML = display; // display the string on the webpage
 }
 

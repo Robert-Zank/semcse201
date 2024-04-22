@@ -2,14 +2,53 @@
 <html>
   <head>
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
   </head>
   <body>
-    <h1>Enter ingredients!</h1>
-    <input id = "tempString">
-    <button onclick = "input();saveIngredients()" id = "ingredientsEnter">Enter</button> <!--button for the uder to click to enter each ingredient-->
-    <h2 id = "display" ></h2> <!--used to display the ingredients-->
-    <button onclick = "displayRecipes()" id = "recipeButton">Click to Display Matching Recipes!</button>
-    <button onclick = "clearIngredients()" id = "clearButton">Clear Ingredients</button> <!--button to clear all ingredients entered at the moment-->
+
+
+    <h1 class="box" style="color:white">
+      <b>Enter ingredients!</b>
+    </h1>
+
+    <div> <!--This div holds all but the title-->
+      <h1> <!--this holds the input box, enter button, and the clear button-->
+        <input id = "tempString">
+        <button onclick = "input();saveIngredients()" id = "ingredientsEnter">Enter</button> <!--button for the user to click to enter each ingredient-->
+        <button onclick = "clearIngredients()" id = "clearButton">Clear Ingredients</button> <!--button to clear all ingredients entered at the moment-->
+      </h1>
+
+      <h4> <!--This holds the "Matching Recipies" button and pop-up-->
+        <div class="box"> <!--This div holds the button-->
+          <a href="#popup-box">Matching Recipies</a>
+        </div>
+        <div id="popup-box" class="modal"> <!--This div is induced when the "matching recipies button is pushed", and uses the modal styling-->
+          <div class="content"> <!--This div holds the pop-up info and uses the context css styling-->
+            <h1 style="color: rgb(20, 158, 36)"> <!--the title of the pop-up div-->
+              Matching Recipies
+            </h1>
+              <p>*display matching recipies here*</p> <!--Content in the context/content div-->
+              <a
+                  href="#"
+                  style="
+                      position: absolute;
+                      top: 10px;
+                      right: 10px;
+                      color: #fe0606;
+                      font-size: 30px;
+                      text-decoration: none;
+                  "
+              >&times;</a> <!--This is the stlying, position, and funcionality of the "x" button on the pop-up-->
+          </div>
+        </div>
+      </h4>
+
+      <h3> <!--This holds the code to display the ingredients in a listed manner-->
+        <p id = "display" ></p> <!--used to display the ingredients-->
+      </h3>
+    </div>
+
+
     <script src="main.js"></script>
   </body>
 </html>

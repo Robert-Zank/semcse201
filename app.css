@@ -54,11 +54,11 @@ body {
 }
 
 .nutrition-menu {
-    position: fixed;
-    top: 500px;
+    position:absolute;
+    top: 15px;
     right: 0;
     font-size: 18px;
-    text-align: center; 
+    text-align:center; 
     background-color:rgb(32, 126, 194);
     width: auto; /* Adjust the width as needed */
 

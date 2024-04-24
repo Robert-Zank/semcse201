@@ -77,3 +77,19 @@ function clearIngredients() {
   localStorage.removeItem("ingredients");
   window.location.reload();
 }
+
+// Funtion to toggle the visability of the menu content
+function toggleMenu() {
+  // get the Nutrition Facts content element
+  var nutritionFacts = document.getElementById("nutritionFacts");
+
+  // Open the display property of the menu content element
+  if(nutritionFacts.style.display === "none") {
+    // Show the menu content if it was hidden
+    nutritionFacts.style.display = "block";
+  } else {
+    // Hide the menu content if it's currently visible
+    nutritionFacts.style.display = "none"; 
+  }
+
+}

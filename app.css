@@ -2,8 +2,6 @@ div {
     background-color: white;
     width:fit-content;
     border: 1px solid black;
-    padding: 5px;
-    margin:auto;
     border-radius: 5px;
 }
 
@@ -18,7 +16,6 @@ body {
 
 .box a {
     padding: 5px;
-    background-color: #ffffff;
     border-radius: 5px;
     text-decoration: none;
 }
@@ -77,6 +74,7 @@ body {
 
 #menuButton {
     position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 5px 5px;
     font-size: 22px;
     top: 0;

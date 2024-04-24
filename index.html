@@ -11,7 +11,7 @@
       <b>Enter ingredients!</b>
     </h1>
 
-    <div> <!--This div holds all but the title-->
+    <div style="margin:auto;padding: 5px"> <!--This div holds all but the title-->
       <h1> <!--this holds the input box, enter button, and the clear button-->
         <input id = "tempString">
         <button onclick = "input();saveIngredients()" id = "ingredientsEnter">Enter</button> <!--button for the user to click to enter each ingredient-->
@@ -19,10 +19,10 @@
       </h1>
 
       <h4> <!--This holds the "Matching Recipies" button and pop-up-->
-        <div class="box"> <!--This div holds the button-->
-          <a href="#popup-box">Matching Recipies</a>
+        <div class="box" style="margin:auto;"> <!--This div holds the button-->
+          <a href="#popup-box" style="background-color: rgb(207, 229, 244);">Matching Recipies</a>
         </div>
-        <div id="popup-box" class="modal"> <!--This div is induced when the "matching recipies button is pushed", and uses the modal styling-->
+        <div id="popup-box" class="modal"> <!--This div is induced when the "matching recipies" button is pushed, and uses the modal styling-->
           <div class="content"> <!--This div holds the pop-up info and uses the context css styling-->
             <h1 style="color: rgb(20, 158, 36)"> <!--the title of the pop-up div-->
               Matching Recipies
@@ -52,7 +52,7 @@
 
     
     <!-- Section for seperate menu button and table with basic ingrediants-->
-    <div class="nutrition-menu">
+    <div class="nutrition-menu" style="padding: 5px">
       <button id="menuButton" onclick="toggleMenu()">Nutrition Information</button>
       <div id="nutritionFacts" class="nutritionFacts"> <!-- Div to contain ingrediant content initially hidden-->
         <h2><br>Basic Ingredient Information</h2>

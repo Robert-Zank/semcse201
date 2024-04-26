@@ -93,19 +93,19 @@ function displayRecipePopup(recipe) {
   popup.style.position = "absolute";
   popup.style.top = "20px"; 
 
-  // Construct the content with HTML elements for separate lines
+  // construct the content with HTML elements for separate lines
   var content = "<strong>Additional information about:</strong><br>";
   content += "<strong>Name:</strong> " + recipe.getName() + "<br>";
   content += "<strong>Ingredients:</strong><br>" + recipe.getIngredients().join("<br>") + "<br>"; // Assuming getIngredients() returns an array
   content += "<strong>Instructions:</strong><br>" + recipe.getInstructions().replace(/\n/g, "<br>") + "<br>"; // Assuming getInstructions() returns a string with newline characters
 
-  // Set the HTML content of the pop-up window with the constructed content
+  // set the HTML content of the pop-up window with the constructed content
   popup.innerHTML = content;
 
-  // Add styling to the pop-up window
+  // add styling to the pop-up window
   popup.classList.add("popup");
 
-  // Append the pop-up window to the body element or any other container in your HTML
+  // append the pop-up window to the body element or any other container in your HTML
   document.body.appendChild(popup);
 }
 

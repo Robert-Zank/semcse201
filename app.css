@@ -39,6 +39,15 @@ body {
     justify-content: center;
 }
 
+.modal a.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fe0606;
+    font-size: 30px;
+    text-decoration: none;
+}
+
 .content {
     position: relative;
     background: white;
@@ -80,4 +89,16 @@ body {
     top: 0;
     right: 0;
     background-color: rgb(207, 229, 244);
+  }
+
+  .recipe-name {
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.content .recipe-list {
+    padding: 10px; /* Add padding to the recipe list */
   }

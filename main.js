@@ -85,30 +85,58 @@ function isIngredient(recipeIngredient){
   return false;
 }
 
-function displayRecipes(){
-  var display = ""; // creates an empty string
-  var validRecipe = false;
-  for(var i = 0; i < recipes.length; i+=1){ // goes through all the recipes
-    for (var j = 0; j < recipes[i].getIngredients().length; j += 1) { // for all of the recipes' ingredients
-      if(!isIngredient(recipes[i].getIngredients()[j])){
-        validRecipe = false;
+// function to create and append recipe elements
+function appendRecipeElements(recipes, container) {
+  // iterate over each recipe name in the array
+  recipes.forEach(function(recipeName) {
+    // create a new div element
+    var div = document.createElement("div");
+    // set the text content of the div to the recipe name
+    div.textContent = recipeName;
+    // add the 'recipe-name' class to the div for styling
+    div.classList.add("recipe-name");
+    // append the div to the specified container
+    container.appendChild(div);
+  });
+}
+
+
+function displayRecipes() { // when this is called a title and x-button are already integrated in the html
+  var matchingIngred = []; // array to hold the matching ingredients
+  var container = document.querySelector(".modal .content"); // creates a container to hold everything in it
+  
+  // remove previous list of matching recipes
+  var recipeList = container.querySelector(".recipe-list"); // grabs what is already in the container (if any) and stores it as recipieList
+  if (recipeList) {
+    container.removeChild(recipeList); // removes it if present
+  }
+
+  // create a new list for matching recipes
+  recipeList = document.createElement("div"); // creates a new div to hold the matching ingredient divs
+  recipeList.classList.add("recipe-list"); // adding a recipie-list
+
+  for(var i = 0; i < recipes.length; i += 1) { // loops thru the recipies
+    var validRecipe = true; // a var to tell if it matches the ingredients
+    for (var j = 0; j < recipes[i].getIngredients().length; j += 1) { // loops thru the recipie ingredients
+      if(!isIngredient(recipes[i].getIngredients()[j])){ // checks to see if the ingredient for the recipie is part of the users pantry
+        validRecipe = false; 
         break;
       }
-      else{
-        validRecipe = true;
-      }
     }
-    if(validRecipe == true){
-      display += "- " + recipes[i].getName() + "<br>"; // add a bullet point, the ingredient, and a newline
+    if(validRecipe) {
+      matchingIngred.push(recipes[i].getName()); // if in match, the add to array
     }
   }
 
-  if (display == "") {
-    display = "No Recipes Match";
+  if (matchingIngred.length === 0) {
+    recipeList.innerHTML = "<p>No Recipes Match</p>";
+  } else {
+    // prints the divs for the matching recipies
+    appendRecipeElements(matchingIngred, recipeList);
   }
 
-  var listRecipes = document.querySelector(".modal .content p"); // chat gpt generated
-  listRecipes.innerHTML = display;
+  // append the new list to the container
+  container.appendChild(recipeList);
 }
 
 function loadIngredients() {

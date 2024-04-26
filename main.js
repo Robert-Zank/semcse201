@@ -86,27 +86,39 @@ function isIngredient(recipeIngredient){
 }
 
 // function to display a pop-up window with additional information about the selected recipe
-function displayRecipePopup(recipeName) {
+function displayRecipePopup(recipe) {
   // create a pop-up window element
   var popup = document.createElement("div");
-  popup.style.padding = "3px";
-  // add content to the pop-up window (you can customize this based on your needs)
-  popup.textContent = "Additional information about " + recipeName;
-  // add styling to the pop-up window
+  popup.style.padding = "10px";
+  popup.style.position = "absolute";
+  popup.style.top = "20px"; 
+
+  // Construct the content with HTML elements for separate lines
+  var content = "<strong>Additional information about:</strong><br>";
+  content += "<strong>Name:</strong> " + recipe.getName() + "<br>";
+  content += "<strong>Ingredients:</strong><br>" + recipe.getIngredients().join("<br>") + "<br>"; // Assuming getIngredients() returns an array
+  content += "<strong>Instructions:</strong><br>" + recipe.getInstructions().replace(/\n/g, "<br>") + "<br>"; // Assuming getInstructions() returns a string with newline characters
+
+  // Set the HTML content of the pop-up window with the constructed content
+  popup.innerHTML = content;
+
+  // Add styling to the pop-up window
   popup.classList.add("popup");
 
-  // append the pop-up window to the body element or any other container in your HTML
+  // Append the pop-up window to the body element or any other container in your HTML
   document.body.appendChild(popup);
 }
+
+
 
 // function to create and append recipe elements
 function appendRecipeElements(recipes, container) {
   // iterate over each recipe name in the array
-  recipes.forEach(function(recipeName) {
+  recipes.forEach(function(recipe) {
     // create a new div element
     var div = document.createElement("div");
     // set the text content of the div to the recipe name
-    div.textContent = recipeName;
+    div.textContent = recipe.getName();
     // add the 'recipe-name' class to the div for styling
     div.classList.add("recipe-name");
     // append the div to the specified container
@@ -115,7 +127,7 @@ function appendRecipeElements(recipes, container) {
     // add an event listener to the div for click events
     div.addEventListener("click", function() {
       // call a function to display a pop-up window with more information about the recipe
-      displayRecipePopup(recipeName);
+      displayRecipePopup(recipe);
   });
   // append the div to the specified container
   container.appendChild(div);
@@ -146,7 +158,7 @@ function displayRecipes() { // when this is called a title and x-button are alre
       }
     }
     if(validRecipe) {
-      matchingIngred.push(recipes[i].getName()); // if in match, the add to array
+      matchingIngred.push(recipes[i]); // if in match, the add to array
     }
   }
 

@@ -85,6 +85,20 @@ function isIngredient(recipeIngredient){
   return false;
 }
 
+// function to display a pop-up window with additional information about the selected recipe
+function displayRecipePopup(recipeName) {
+  // create a pop-up window element
+  var popup = document.createElement("div");
+  popup.style.padding = "3px";
+  // add content to the pop-up window (you can customize this based on your needs)
+  popup.textContent = "Additional information about " + recipeName;
+  // add styling to the pop-up window
+  popup.classList.add("popup");
+
+  // append the pop-up window to the body element or any other container in your HTML
+  document.body.appendChild(popup);
+}
+
 // function to create and append recipe elements
 function appendRecipeElements(recipes, container) {
   // iterate over each recipe name in the array
@@ -97,7 +111,15 @@ function appendRecipeElements(recipes, container) {
     div.classList.add("recipe-name");
     // append the div to the specified container
     container.appendChild(div);
+
+    // add an event listener to the div for click events
+    div.addEventListener("click", function() {
+      // call a function to display a pop-up window with more information about the recipe
+      displayRecipePopup(recipeName);
   });
+  // append the div to the specified container
+  container.appendChild(div);
+});
 }
 
 

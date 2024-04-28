@@ -1,10 +1,11 @@
 var ingredients = []; // array for the ingredients entered by the user
 var numberOfIngredients = 0; // keeps track of the number of ingredients
 class Recipe{ // class for the different recipes
-  constructor(name, ingredients, instructions) {
+  constructor(name, ingredients, instructions, difficulty) {
     this.name = name; // name of recipe
     this.ingredients = ingredients; // array of ingredients
     this.instructions = instructions; // string of instructions
+    this.difficulty = difficulty; // number for difficulty 1-5
   }
 
   getName(){
@@ -17,6 +18,10 @@ class Recipe{ // class for the different recipes
 
   getInstructions(){
     return this.instructions;
+  }
+
+  getDifficulty(){
+    return this.difficulty;
   }
 }
 
@@ -235,4 +240,30 @@ function displayAllRecipes() {
 
   // append the new list to the container
   container.appendChild(recipeList);
+}
+
+function sortRecipesByDifficulty() {
+  var container = document.querySelector(".modal .content");
+  var recipeList = container.querySelector(".recipe-list"); // Gets the matched recipe list
+
+  if (recipeList) { // Checks if there are any matching recipies
+      var recipesArray = Array.from(recipeList.children); // Converts collection to Array
+      var matchingRecipes = recipesArray.map(item => {
+          var recipeName = item.textContent.split(" - ")[0]; // Gets the recipe name
+          return recipes.find(recipe => recipe.name === recipeName); // Locates corrosponding Recipe object from matching recipe
+      });
+
+      // Sorts array of matching recipes by difficuly number
+      matchingRecipes.sort((a, b) => a.difficulty - b.difficulty);
+
+      // Clears the current list
+      recipeList.innerHTML = '';
+
+      // Appends the sorted matching recipes back to the list
+      matchingRecipes.forEach(recipe => {
+          const listItem = document.createElement("div");
+          listItem.textContent = `${recipe.name} - Difficulty: ${recipe.difficulty}`; // Displays text and difficulty number
+          recipeList.appendChild(listItem);
+      });
+  }
 }

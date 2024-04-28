@@ -52,8 +52,11 @@ recipes.push(new Recipe("Guacamole 🥑", ["avocado", "tomato", "onion", "cilant
 recipes.push(new Recipe("Beef and Bean Burritos 🌯", ["ground beef", "refried beans", "tortillas", "cheese", "salsa"], "1. Cook ground beef\n2. Warm refried beans and tortillas\n3. Fill tortillas with beef, beans, cheese, and salsa\n4. Fold to create burritos"));
 recipes.push(new Recipe("Honey Mustard Chicken 🍗", ["chicken breast", "honey", "Dijon mustard", "garlic", "thyme"], "1. Mix honey, mustard, garlic, and thyme\n2. Coat chicken with mixture\n3. Bake at 375°F until chicken is cooked through"));
 
-// This loads the Ingredients when the program is booted up
-window.onload = loadIngredients;
+// This loads the Ingredients and Recipes when the program is booted up
+window.onload = function() { // chat GPT generated
+  loadIngredients();
+  displayAllRecipes();
+};
 
 function displayIngredients() {
   var display = ""; // creates an empty string
@@ -214,4 +217,22 @@ function toggleMenu() {
     nutritionFacts.style.display = "none"; 
   }
 
+}
+
+function displayAllRecipes() {
+  var container = document.getElementById("recipesContainer");
+
+  // create a new list for all recipes
+  var recipeList = document.createElement("div"); // creates a new div to hold the recipe divs
+  recipeList.classList.add("recipe-list"); // adding a recipe-list class
+
+  if (recipeList.length === 0) {
+    recipeList.innerHTML = "<p>No Recipes Available</p>";
+  } else {
+    // prints the divs for all the recipes
+    appendRecipeElements(recipes, recipeList);
+  }
+
+  // append the new list to the container
+  container.appendChild(recipeList);
 }

@@ -1,5 +1,6 @@
 var ingredients = []; // array for the ingredients entered by the user
 var numberOfIngredients = 0; // keeps track of the number of ingredients
+let lastClickedRecipe = null;
 class Recipe{ // class for the different recipes
   constructor(name, ingredients, instructions, difficulty) {
     this.name = name; // name of recipe
@@ -58,10 +59,20 @@ recipes.push(new Recipe("Beef and Bean Burritos 🌯", ["ground beef", "refried 
 recipes.push(new Recipe("Honey Mustard Chicken 🍗", ["chicken breast", "honey", "dijon mustard", "garlic", "thyme"], "1. Mix honey, mustard, garlic, and thyme\n2. Coat chicken with mixture\n3. Bake at 375°F until chicken is cooked through", 3));
 
 // This loads the Ingredients and Recipes when the program is booted up
-window.onload = function() { // chat GPT generated
+window.onload = function() {
   loadIngredients();
   displayAllRecipes();
 };
+
+function displayHistory() {
+  var container = document.getElementById("historyContainer");
+  container.textContent = ""; // clear previous content
+  if (lastClickedRecipe) {
+    var content = document.createElement("div");
+    content.textContent = "Last Recipe: " + lastClickedRecipe.getName();
+    container.appendChild(content);
+  }
+}
 
 function displayIngredients() {
   var display = ""; // creates an empty string
@@ -113,7 +124,7 @@ function displayRecipePopup(recipe) {
   // add styling to the pop-up window
   popup.classList.add("popup");
 
-  // append the pop-up window to the body element or any other container in your HTML
+  // append the pop-up window to the body element
   document.body.appendChild(popup);
 }
 
@@ -136,6 +147,8 @@ function appendRecipeElements(recipes, container) {
     div.addEventListener("click", function() {
       // call a function to display a pop-up window with more information about the recipe
       displayRecipePopup(recipe);
+      lastClickedRecipe = recipe; // update the last clicked recipe
+      displayHistory();
   });
   // append the div to the specified container
   container.appendChild(div);

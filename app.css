@@ -102,4 +102,8 @@ body {
 .content .recipe-list {
     padding: 10px; /* Add padding to the recipe list */
   }
+
+  #historyContainer {
+    margin-top: 20px; /* Add margin to the top of the Last Recipe div */
+  }
   

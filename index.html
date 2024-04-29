@@ -106,11 +106,17 @@
       </div>
     </div>
 
-    <!-- Section for seperate menu button and table with basic ingrediants-->
+    <!-- Section for separate shopping list menu -->
     <div class="shopList-menu" style="padding: 5px">
       <button id="shopListButton" onclick="toggleMenu(1)">Shopping List</button>
-      <div id="shopListBox" class="shopListBox"> <!-- Div to contain ingrediant content initially hidden-->
-        <h3><br>Items In Shopping List:</h3>
+      <div id="shopListBox" class="shopListBox"> <!-- Div to contain shopping list content initially hidden-->
+        <h1> <!--this holds the enter button and clear button-->
+          <button onclick = "saveShopList()" id = "shopListEnterEnter">Save Ingredients to List</button> <!--button for the user to enter ingredients-->
+          <button onclick = "clearShopList()" id = "clearShopListButton">Clear Shopping List</button> <!--button to clear the shopping list-->
+        <h2><br>Items In Shopping List:</h2>
+        <h3> <!--This holds the code to display the ingredients in a listed manner-->
+          <p id = "shopListDisplay" ></p> <!--used to display the ingredients-->
+        </h3>
       </div>
     </div>
     <script src="main.js"></script>

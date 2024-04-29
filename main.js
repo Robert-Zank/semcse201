@@ -221,6 +221,46 @@ function clearIngredients() {
   window.location.reload();
 }
 
+function loadShopList() {
+  /* This grabs the string that we converted in the saveIngredients() function
+  that is stored with the key "ingredients"*/
+  const storedShopList = localStorage.getItem("shopList");
+  /*Checks if the user has anything stored in their RAM with the key*/
+  if (storedShopList) {
+    /*Converts the string back into an array that we can use*/
+    ingredients = JSON.parse(storedShopList);
+  }
+
+  displayShopList();
+}
+
+function displayShopList() {
+  var display = ""; // creates an empty string
+  for (var i = 0; i < ingredients.length; i += 1) { // for all of the ingredients in the ingredient array
+    display += "- " + ingredients[i] + "<br>"; // add a bullet point, the ingredient, and a newline
+  }
+
+  if (display == "") {
+    display = "No Ingredients in Shopping List";
+  }
+  document.getElementById("shopListDisplay").innerHTML = display; // display the string on the webpage
+}
+
+/*Called when a new ingredient is added. Each time it is called, the memory location is overwritten.*/
+function saveShopList() {
+  /* This stores the item in the users RAM. It takes two string values. 
+  The first one is the key and the second is the value. JSON.stringify converts
+  the array into a string so it can be stored.*/
+  localStorage.setItem("shopList", JSON.stringify(ingredients));
+  loadShopList();
+}
+
+// This function clears the ram from the ingredients 
+function clearShopList() {
+  localStorage.removeItem("shopList");
+  window.location.reload();
+}
+
 // Funtion to toggle the visability of the menu content. 0 is nutrition facts menu, 1 is shopping list menu
 function toggleMenu(menuID) {
   // get the Nutrition Facts content element

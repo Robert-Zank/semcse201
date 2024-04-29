@@ -128,3 +128,13 @@ body {
     margin-top: 20px; /* Add margin to the top of the Last Recipe div */
   }
   
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fe0606;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

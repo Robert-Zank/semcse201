@@ -117,6 +117,8 @@ function displayRecipePopup(recipe) {
   content += "<strong>Name:</strong> " + recipe.getName() + "<br>";
   content += "<strong>Ingredients:</strong><br>" + recipe.getIngredients().join("<br>") + "<br>"; // Assuming getIngredients() returns an array
   content += "<strong>Instructions:</strong><br>" + recipe.getInstructions().replace(/\n/g, "<br>") + "<br>"; // Assuming getInstructions() returns a string with newline characters
+  // content += funtion to make and recipe.get ingreditent to an array with the ingreditans to list
+  content += "<button class='close-button' onclick='closeRecipePopup()'>X</button>"; // Add the close button
 
   // set the HTML content of the pop-up window with the constructed content
   popup.innerHTML = content;
@@ -128,7 +130,12 @@ function displayRecipePopup(recipe) {
   document.body.appendChild(popup);
 }
 
-
+function closeRecipePopup() {
+  var popup = document.querySelector(".popup");
+  if (popup) {
+      popup.parentNode.removeChild(popup);
+  }
+}
 
 // function to create and append recipe elements
 function appendRecipeElements(recipes, container) {

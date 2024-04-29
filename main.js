@@ -221,18 +221,30 @@ function clearIngredients() {
   window.location.reload();
 }
 
-// Funtion to toggle the visability of the menu content
-function toggleMenu() {
+// Funtion to toggle the visability of the menu content. 0 is nutrition facts menu, 1 is shopping list menu
+function toggleMenu(menuID) {
   // get the Nutrition Facts content element
   var nutritionFacts = document.getElementById("nutritionFacts");
 
-  // Open the display property of the menu content element
-  if(nutritionFacts.style.display === "none") {
-    // Show the menu content if it was hidden
-    nutritionFacts.style.display = "block";
-  } else {
-    // Hide the menu content if it's currently visible
-    nutritionFacts.style.display = "none"; 
+  if(menuID == 0) {
+    // Open the display property of the menu content element
+    if(nutritionFacts.style.display === "none") {
+      // Show the menu content if it was hidden
+      nutritionFacts.style.display = "block";
+    } else {
+      // Hide the menu content if it's currently visible
+      nutritionFacts.style.display = "none"; 
+    }
+  } 
+  if(menuID == 1) {
+    // Open the display property of the menu content element
+    if(shopListBox.style.display === "none") {
+      // Show the menu content if it was hidden
+      shopListBox.style.display = "block";
+    } else {
+      // Hide the menu content if it's currently visible
+      shopListBox.style.display = "none"; 
+    }
   }
 
 }

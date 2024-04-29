@@ -49,7 +49,7 @@
     
     <!-- Section for seperate menu button and table with basic ingrediants-->
     <div class="nutrition-menu" style="padding: 5px">
-      <button id="menuButton" onclick="toggleMenu()">Nutrition Information</button>
+      <button id="menuButton" onclick="toggleMenu(0)">Nutrition Information</button>
       <div id="nutritionFacts" class="nutritionFacts"> <!-- Div to contain ingrediant content initially hidden-->
         <h2><br>Basic Ingredient Information</h2>
         <table>
@@ -103,6 +103,14 @@
           </tr>
         </table>
 
+      </div>
+    </div>
+
+    <!-- Section for seperate menu button and table with basic ingrediants-->
+    <div class="shopList-menu" style="padding: 5px">
+      <button id="shopListButton" onclick="toggleMenu(1)">Shopping List</button>
+      <div id="shopListBox" class="shopListBox"> <!-- Div to contain ingrediant content initially hidden-->
+        <h3><br>Items In Shopping List:</h3>
       </div>
     </div>
     <script src="main.js"></script>

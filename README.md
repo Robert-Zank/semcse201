@@ -29,13 +29,11 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
       <img width="408" alt="Screenshot 2024-04-30 at 4 29 29 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/fa99de8b-4673-43ab-ae19-357eb6eef74c">
 
 2) Install Visual Studio Code if you do not have it
-   
-       [https://code.visualstudio.com/download](url)
-    
-       <img width="494" alt="Screenshot 2024-04-30 at 4 30 21 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/6b8ddd86-c35f-4dae-a15f-0e191eecf601">
-       
-       <img width="479" alt="Screenshot 2024-04-30 at 4 30 41 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/4dae43a2-f0c2-498e-90db-22d1466fe332">
-       
+       [https://code.visualstudio.com/download](url)\
+      
+
+      <img width="360" alt="Screenshot 2024-04-30 at 4 38 50 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/c850f347-611f-42ea-8f2d-411072d90954">
+
        On Windows:
     
        <img width="447" alt="Screenshot 2024-04-30 at 4 31 03 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/656247a5-60fc-4ebc-9a6b-b457f05053bb">
@@ -44,7 +42,7 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
     
        <img width="439" alt="Screenshot 2024-04-30 at 4 31 15 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/9b5ce584-1fbd-43d2-b1cb-e9eb774e7885">
 
-3) Install Liver Server Extension on Visual Studio Code
+4) Install Liver Server Extension on Visual Studio Code
    
       On the left hand side of visual studio code click the extension explorer or the puzzle       piece. 
     

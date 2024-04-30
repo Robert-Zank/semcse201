@@ -138,3 +138,35 @@ body {
     border: none;
     cursor: pointer;
 }
+
+#timers {
+    position: absolute;
+    top: 575px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    font-size: 24px;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    width: fit-content;
+  }
+
+/* Style for the timer input field */
+.timer-input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+
+/* Style for the timer button */
+.timer-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: rgb(32, 126, 194);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

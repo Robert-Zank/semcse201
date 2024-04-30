@@ -339,3 +339,44 @@ function sortRecipesByDifficulty() {
       });
   }
 }
+
+// Tiemr variables
+let myCounter;
+let seconds = 60;
+
+// Button event listener
+document.getElementById('btn').addEventListener('click', startTimer);
+
+// Timer function
+function startTimer() {
+  // Get input value for minutes
+  let mins = parseInt(document.getElementById('min').value);
+  
+  // Convert minutes to seconds
+  let totalTime = mins * seconds;
+
+  // Create a new timer display element
+  let timerDisplay = document.createElement('div');
+  timerDisplay.classList.add('timer-display'); // Add a class for styling purposes
+  document.getElementById('timers').appendChild(timerDisplay);
+
+  // Update timer display every second
+  // Lines 365-373 are from chatGPT
+  let timerInterval = setInterval(function() {
+    if (totalTime < 0) {
+      console.log('Timer completed');
+      clearInterval(timerInterval);
+    } else {
+      updateTime(timerDisplay, totalTime); // Pass the timer display element along with totalTime
+      totalTime--;
+    }
+  }, 1000);
+}
+
+// Updates the timers display
+function updateTime(timerDisplay, time) {
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  timerDisplay.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+

@@ -33,15 +33,18 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
       
 
       <img width="360" alt="Screenshot 2024-04-30 at 4 38 50 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/c850f347-611f-42ea-8f2d-411072d90954">
+      
+      <img width="354" alt="Screenshot 2024-04-30 at 4 40 11 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/3824de71-cab3-47bd-bf5d-1e644070b6df">
 
        On Windows:
-    
-       <img width="447" alt="Screenshot 2024-04-30 at 4 31 03 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/656247a5-60fc-4ebc-9a6b-b457f05053bb">
-       
+
+      <img width="344" alt="Screenshot 2024-04-30 at 4 40 22 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/1efc49ce-a359-4322-9452-3a4deb8c33f5">
+
        On MAC:
     
-       <img width="439" alt="Screenshot 2024-04-30 at 4 31 15 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/9b5ce584-1fbd-43d2-b1cb-e9eb774e7885">
+      <img width="354" alt="Screenshot 2024-04-30 at 4 40 39 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/16473901-da88-4415-b0f2-d4c8738a873a">
 
+       
 4) Install Liver Server Extension on Visual Studio Code
    
       On the left hand side of visual studio code click the extension explorer or the puzzle       piece. 

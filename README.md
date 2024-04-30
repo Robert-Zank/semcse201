@@ -30,9 +30,8 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
 2) Install Visual Studio Code if you do not have it
 
-       [https://code.visualstudio.com/download](url)\
+      https://code.visualstudio.com/download
       
-
       <img width="360" alt="Screenshot 2024-04-30 at 4 38 50 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/c850f347-611f-42ea-8f2d-411072d90954">
       
       <img width="354" alt="Screenshot 2024-04-30 at 4 40 11 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/3824de71-cab3-47bd-bf5d-1e644070b6df">

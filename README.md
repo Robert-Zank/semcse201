@@ -15,6 +15,7 @@ https://code.visualstudio.com/download
 https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
 1) Intsall GitHub Desktop if you do not have it
+
   [https://desktop.github.com/ ](url)
 <img width="332" alt="Screenshot 2024-04-30 at 4 21 47 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/2debc1ab-d5e8-4816-a7d1-f350929e7b73">
 
@@ -25,6 +26,7 @@ For MAC:
 <img width="408" alt="Screenshot 2024-04-30 at 4 29 29 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/fa99de8b-4673-43ab-ae19-357eb6eef74c">
 
 2) Install Visual Studio Code if you do not have it
+   
    [https://code.visualstudio.com/download](url)
    <img width="494" alt="Screenshot 2024-04-30 at 4 30 21 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/6b8ddd86-c35f-4dae-a15f-0e191eecf601">
 <img width="479" alt="Screenshot 2024-04-30 at 4 30 41 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/4dae43a2-f0c2-498e-90db-22d1466fe332">
@@ -47,17 +49,12 @@ On MAC:
 
   Click Install Button
   
-<img width="336" alt="Screenshot 2024-04-30 at 4 32 40 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/c3b89573-225d-4292-8d11-8580a0dfe76a">
+  <img width="336" alt="Screenshot 2024-04-30 at 4 32 40 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/c3b89573-225d-4292-8d11-8580a0dfe76a">
 
-You will then get this confirmation file Opened with resources if you need them.
+  You will then get this confirmation file Opened with resources if you need them.
 
   <img width="343" alt="Screenshot 2024-04-30 at 4 33 05 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/fedee1df-c298-4316-aa82-3e3fa44ee71f">
 
-
-
-
-
-2) 
 ## Run
 
 - right click on the html file in VScode

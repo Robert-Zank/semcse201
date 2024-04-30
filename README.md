@@ -36,11 +36,11 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
       
       <img width="354" alt="Screenshot 2024-04-30 at 4 40 11 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/3824de71-cab3-47bd-bf5d-1e644070b6df">
 
-       On Windows:
+       For Windows:
 
       <img width="344" alt="Screenshot 2024-04-30 at 4 40 22 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/1efc49ce-a359-4322-9452-3a4deb8c33f5">
 
-       On MAC:
+       For MAC:
     
       <img width="354" alt="Screenshot 2024-04-30 at 4 40 39 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/16473901-da88-4415-b0f2-d4c8738a873a">
 

@@ -65,5 +65,45 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
 ## Run
 
-- right click on the html file in VScode
-- click "Open with Live Server"
+1) CLICK THE LINK BELOW, this will redirect you to github which has all of our files on it
+
+      https://github.com/Robert-Zank/semcse201.git
+
+2) Click the green CODE button on GitHub
+
+      <img width="284" alt="Screenshot 2024-04-30 at 4 43 35 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/84cc705f-b68f-4069-908f-25904cec0993">
+
+3)  Open With GitHub DESKTOP
+
+      <img width="346" alt="Screenshot 2024-04-30 at 4 44 15 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/ee49072f-8e1b-455c-903e-c03bbce9296e">
+
+4) After you click from step 3 it will open the desktop to this
+
+      <img width="435" alt="Screenshot 2024-04-30 at 4 44 44 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/7f1f39bc-0640-4a11-997a-f2219c17d707">
+
+5) CLICK OPEN VISUAL STUDIO CODE
+
+      <img width="417" alt="Screenshot 2024-04-30 at 4 45 15 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/6dc66c56-260d-4e28-9435-7bc03a09a74f">
+
+6) OPENS IN Visual Studio Code
+
+      <img width="484" alt="Screenshot 2024-04-30 at 4 45 59 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/1875a2f3-d2cf-47c6-8de5-4e94e39ae363">
+
+7) CLICK this intex.html FILE
+
+      <img width="384" alt="Screenshot 2024-04-30 at 4 46 26 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/679470b9-48ac-4505-8cbe-36549bb0c08f">
+
+8) CLICK Open with Live Server Extension from the Pop up
+
+      <img width="407" alt="Screenshot 2024-04-30 at 4 46 54 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/b2db4aec-6f65-44f4-b47d-eb6d362752a6">
+
+9) Use our Program for pantry and recipe management!
+
+      <img width="551" alt="Screenshot 2024-04-30 at 4 47 27 pm" src="https://github.com/Robert-Zank/semcse201/assets/112726575/3d479aef-f9eb-49fe-9f20-bd4adc3cc9be">
+
+
+
+
+
+
+

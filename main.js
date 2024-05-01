@@ -100,7 +100,7 @@ function displayIngredients() {
 // handles the input of the ingredients
 function input(){
   var str = document.getElementById("tempString").value; // grabs the value entered by the user
-  ingredients.push(str); // puts the input in the ingredients array
+  ingredients.push(str.toLowerCase()); // puts the input in the ingredients array
   numberOfIngredients += 1; // increases ingredients count
   
   displayIngredients();
